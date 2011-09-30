@@ -65,5 +65,29 @@ public class UserDatadao {
         }
 
     }
+     public boolean getdelete(UserData ud){
+             try {
+            System.out.println("user: "+ud);
+                s= HibernateUtils.getSessionFactory().openSession();
+                   t=s.beginTransaction();
+                  String hql="from UserData where id=4";
 
+           UserData lp=(UserData)s.createQuery(hql).uniqueResult();
+            if(lp!=null){
+                System.out.println("ud is not null, inside if");
+                s.delete(lp);
+                t.commit();
+                return true;
+            }else{
+                return false;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally{
+            s.close();
+        }
+
+
+     }
     }

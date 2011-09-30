@@ -103,11 +103,27 @@ public class UserActionBean implements ActionBean {
             System.out.println("inside update: "+ud);
 
             if( dao.getupdate(ud)){
-              return new ForwardResolution("/index.jsp");
+              return new ForwardResolution("/testingGit.jsp");
             }else{
                 return new ForwardResolution("/index.jsp");
             }
         }
+
+    public Resolution delete() {
+               dao=new UserDatadao();
+               l=new ArrayList<UserData>();
+               ud=new UserData(firstname,lastname);
+               l.add(ud);
+               System.out.println("inside update: "+ud);
+
+               if( dao.getdelete(ud)){
+                 return new ForwardResolution("/testingGit.jsp");
+               }else{
+                   return new ForwardResolution("/index.jsp");
+               }
+           }
+
+
 
 }
         // LoginDao dao=new LoginDao();
