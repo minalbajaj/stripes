@@ -11,16 +11,11 @@ import org.hibernate.*;
 import utils.HibernateUtils;
 
 
-/**
- * Created by IntelliJ IDEA.
- * User: u2
- * Date: Sep 28, 2011
- * Time: 3:10:10 PM
- * To change this template use File | Settings | File Templates.
- */
 public class UserDatadao {
     Session s= null;
     Transaction t=null;
+
+
     public boolean saveUser(UserData ud){
         try {
             System.out.println("user: "+ud);
